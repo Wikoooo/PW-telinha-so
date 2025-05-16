@@ -1,23 +1,22 @@
 <?php
-session_start();
 include 'Usuario.class.php';
 
-if (isset($_POST['email'])) {
+if (isset($_POST['nome'])) {
+    $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
     $usuario = new Usuario();
-    $usuarioDados = $usuario->chkPass($email, $senha); 
 
-    if ($usuarioDados) {
-       
-        $_SESSION['id'] = $usuarioDados['id'];
-        $_SESSION['nome'] = $usuarioDados['nome'];
-        header("Location: Tabela.php"); 
-        exit;
+    $exito = $usuario->cadastrar($nome, $email, $senha);
+    
+    if ($exito) {
+        echo "<script>
+        alert('Usuário cadastrado com sucesso!');
+        </script>";
     } else {
         echo "<script>
-        alert('Email ou senha incorretos!');
+        alert('Email já cadastrado!');
         </script>";
     }
 }
@@ -29,14 +28,16 @@ if (isset($_POST['email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+    <title>Cadastro</title>
+
 </head>
 <body>
-    <form action="FormLogin.php" method="POST">
-        <h1>Login</h1>
+    <form action="" method="POST">
+        <h1>Cadastro</h1>
+        <input type="text" name="nome" placeholder="Nome" required><br>
         <input type="email" name="email" placeholder="Email" required><br>
         <input type="password" name="senha" placeholder="Senha" required><br>
-        <input type="submit" value="Entrar">
+        <input type="submit" value="Cadastrar">
     </form>
 </body>
 </html>

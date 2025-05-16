@@ -1,0 +1,175 @@
+/* style.css - Estilo Winx para seus formulários e tabelas */
+:root {
+    --rosa-claro: #f7d6f7;
+    --rosa: #f48ac2;
+    --roxo: #b39ddb;
+    --lilas: #e1bee7;
+    --azul-claro: #b3e5fc;
+    --branco: #ffffff;
+    --sombra: rgba(180, 136, 255, 0.2);
+  }
+  
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to bottom right, var(--rosa-claro), var(--lilas));
+    color: #5e3575;
+    padding: 2rem;
+    margin: 0;
+    min-height: 100vh;
+  }
+  
+  /* Centralizar formulários */
+  form {
+    background: var(--branco);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 15px var(--sombra);
+    padding: 2rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    animation: fadeIn 1s ease;
+  }
+  
+  form h1 {
+    text-align: center;
+    color: var(--roxo);
+    margin-bottom: 1.5rem;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form select,
+  form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--lilas);
+    border-radius: 1rem;
+    background-color: var(--azul-claro);
+    color: #4a2c60;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  form input[type="text"]:focus,
+  form input[type="email"]:focus,
+  form input[type="password"]:focus,
+  form select:focus,
+  form textarea:focus {
+    border-color: var(--rosa);
+    outline: none;
+    background-color: #fbe8ff;
+  }
+  
+  form input[type="submit"],
+  form button {
+    background: linear-gradient(to right, var(--rosa), var(--roxo));
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--sombra);
+    transition: transform 0.3s ease;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+  
+  form input[type="submit"]:hover,
+  form button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Tabela estilizada */
+  table {
+    width: 90%;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background-color: var(--branco);
+    box-shadow: 0 0 12px var(--sombra);
+    border-radius: 1rem;
+    overflow: hidden;
+    font-size: 1rem;
+  }
+  
+  table th,
+  table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--lilas);
+    color: #5e3575;
+  }
+  
+  table th {
+    background-color: var(--roxo);
+    color: white;
+  }
+  
+  table tr:hover {
+    background-color: var(--rosa-claro);
+    transition: background-color 0.3s ease;
+  }
+  
+  table a {
+    color: var(--rosa);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  table a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Destaque para linha do usuário logado */
+  .destaque {
+    background: linear-gradient(90deg, var(--rosa-claro), var(--lilas));
+    font-weight: bold;
+  }
+  
+  /* Container da tela principal */
+  .container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: var(--branco);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 15px var(--sombra);
+    text-align: center;
+  }
+  
+  .container h1 {
+    color: var(--roxo);
+  }
+  
+  /* Botões da tela principal */
+  .botoes a button {
+    background: linear-gradient(to right, var(--rosa), var(--roxo));
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--sombra);
+    margin: 0 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .botoes a button:hover {
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

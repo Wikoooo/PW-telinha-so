@@ -16,7 +16,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
         $_SESSION['nome'] = $exito['nome'];
 
 
-        header("Location: principal.php");
+        header("Location: Tabela.php");
         exit();
     } else {
         echo "<script>
