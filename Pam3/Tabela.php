@@ -43,7 +43,7 @@ if( isset( $_SESSION['nome'])){
                     echo "<td class='destaque'>".$user['email']."</td>";
                     echo "<td class='destaque'>".$user['senha']."</td>";
                     echo "<td class='destaque'><a href='delete.php?id=".$user['id']."'>Excluir</a></td>";
-                    echo "<td class='destaque'><a href='update.php?id=".$user['id']."'>Editar</a></td>";
+                    echo "<td class='destaque'><a href='editar.php?id=".$user['id']."'>Editar</a></td>";
                     echo "</tr>";
                 }else{
                     $editId = $user['id'];
@@ -52,7 +52,7 @@ if( isset( $_SESSION['nome'])){
                     echo "<td>".$user['email']."</td>";
                     echo "<td>".$user['senha']."</td>";
                     echo "<td><a href='delete.php?id=".$user['id']."'>Excluir</a></td>";
-                    echo "<td><a href='update.php?id=".$user['id']."'>Editar</a></td>";
+                    echo "<td><a href='editar.php?id=".$user['id']."'>Editar</a></td>";
                     echo "</tr>";
                 }
                 

@@ -9,17 +9,23 @@ if (!isset($_SESSION['id'])) {
 require 'Usuario.class.php';
 $usuario = new Usuario();
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $dados = $usuario->getById($_GET['id']);
+    if (!$dados) {
+        echo "Usuário não encontrado.";
+        exit;
+    }
 }
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
-    $senha = $_POST['senha']; 
+    $senha = $_POST['senha'];
 
-    $usuario->update($id, $nome, $email, $senha);
+    $usuario->alterarUsuario($id, $nome, $email, $senha);
     header("Location: Tabela.php");
     exit;
 }
@@ -30,5 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     Nome: <input type="text" name="nome" value="<?= $dados['nome'] ?>"><br>
     Email: <input type="email" name="email" value="<?= $dados['email'] ?>"><br>
     Senha: <input type="text" name="senha" value="<?= $dados['senha'] ?>"><br>
-    <input type="submit" value="Atualizar">
+    <input type="submit" value="Salvar Alterações">
+    <link rel="stylesheet" href="style.css">
 </form>

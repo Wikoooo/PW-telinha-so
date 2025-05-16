@@ -70,5 +70,14 @@ class Usuario {
         $stmt->bindValue(":id", $id);
         return $stmt->execute();
     }
+    public function getById($id) {
+        $sql = "SELECT * FROM Usuarinhos WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+    
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
 }
 ?>
